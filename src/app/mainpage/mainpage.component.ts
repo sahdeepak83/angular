@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
-
+import { Router} from '@angular/router';
 import {Http, Response, Headers, RequestOptions } from "@angular/http";
 import 'rxjs/add/operator/map';
 
@@ -13,7 +13,7 @@ import 'rxjs/add/operator/map';
 export class MainpageComponent implements OnInit {
    formdata;
    cutomerdata;
-   constructor(private http: Http) { }
+   constructor(private http: Http,private router: Router) { }
    stateCtrl: FormControl;
    ngOnInit() {
       this.formdata = new FormGroup({
@@ -36,5 +36,6 @@ export class MainpageComponent implements OnInit {
          this.cutomerdata.push(data[prop]);
       }
       console.log(this.cutomerdata);
+      this.router.navigate(['app-mainpage'])
    }
 }
