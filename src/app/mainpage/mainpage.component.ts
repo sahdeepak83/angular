@@ -36,6 +36,7 @@ export class MainpageComponent implements OnInit {
          this.cutomerdata.push(data[prop]);
       }
       console.log(this.cutomerdata);
-      this.router.navigate(['app-mainpage'])
+      
    }
+   
 }
